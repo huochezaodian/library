@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+{% parent %}
+<!-- 引入额外的静态 -->
+{% endblock %}
+
+{% block content %}
+    <p>Welcome to {{ title }}.</p>
+    {% for item in books %}
+        {{ item.name }}
+    {% endfor %}
+{% endblock %}
+
