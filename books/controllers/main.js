@@ -1,28 +1,26 @@
 const BookInfo = require('./../models/books')
 const bookInfo = new BookInfo()
 const mainController =  {
-  index: async (ctx, next) => {
-    await ctx.render('index', {
-      title: 'home',
-      books: bookInfo.getBookList()
-    })
-  },
   list: async (ctx, next) => {
+    const params = ctx.query
+    const books = await bookInfo.getBookList(params)
     await ctx.render('index', {
+      form: params,
       title: 'list',
-      books: bookInfo.getBookList()
+      books
     })
   },
   operate: async (ctx, next) => {
-    await ctx.render('index', {
+    const params = ctx.query
+    const book = await bookInfo.getOneBookById(params)
+    await ctx.render('operate', {
       title: 'operate',
-      books: bookInfo.getBookList()
+      book
     })
   },
   login: async (ctx, next) => {
-    await ctx.render('index', {
-      title: 'login',
-      books: bookInfo.getBookList()
+    await ctx.render('login', {
+      title: 'login'
     })
   },
 }

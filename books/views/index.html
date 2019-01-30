@@ -5,12 +5,59 @@
 {% block head %}
 {% parent %}
 <!-- 引入额外的静态 -->
+
 {% endblock %}
 
 {% block content %}
-    <p>Welcome to {{ title }}.</p>
-    {% for item in books %}
-        {{ item.name }}
-    {% endfor %}
+    <div class="form-query">
+        <form class="form-inline clearfix" action="/list">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" name="id" class="form-control" value="{{form.id}}">
+            </div>
+            <div class="form-group">
+                <label for="name">name</label>
+                <input type="text" name="name" class="form-control" value="{{form.name}}">
+            </div>
+            
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary">查询</button>
+                <button type="button" name="reset" class="btn btn-primary">重置</button>
+                <a name="add" class="btn btn-primary" href="/operate">添加</a>
+            </div>
+        </form>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>书名</th>
+                    <th>类型</th>
+                    <th>价格</th>
+                    <th>页数</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.name }}</td>
+                        <td>{{ book.type }}</td>
+                        <td>{{ book.price }}</td>
+                        <td>{{ book.pages }}</td>
+                        <td>
+                            <a name="edit" href="/operate?id={{book.id}}" class="btn btn-primary">编辑</a>
+                            <button type="button" name="delete" class="btn btn-primary" data-id="{{book.id}}">删除</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+{% block bottom %}
+<script src="/js_es6/books.es6.js"></script>
 {% endblock %}
 

@@ -122,3 +122,11 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.form-query {
+    margin: 20px 0;
+}
+
+.form-query .form-group {
+    margin-right: 10px;
+}
