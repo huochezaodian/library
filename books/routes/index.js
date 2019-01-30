@@ -1,6 +1,6 @@
 const router = require('koa-router')()
-const MainController = require('./../controllers/main')
-const ProxyController = require('./../controllers/proxy')
+const MainController = require('../controllers/mainController')
+const ProxyController = require('../controllers/proxyController')
 
 // pages
 router.get('/list', MainController.list)

@@ -37,6 +37,9 @@
         {% if title != 'home' %}
         <li><a href="javascript:;">{{ title }}</a></li>
         {% endif %}
+        {% if title2  %}
+        <li><a href="javascript:;">{{ title2 }}</a></li>
+        {% endif %}
       </ol>
       {% block content %}{% endblock %}
     </div>

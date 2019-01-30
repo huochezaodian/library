@@ -8,6 +8,7 @@ $(function(){
         
         if (name === 'reset') { // 重置
             $('input').val('')
+            $('select').val('')
         } else if (name === 'delete'){ // 删除
             ajaxData({
                 url: '/library/delete',
@@ -16,7 +17,7 @@ $(function(){
                     id: target.dataset.id
                 }
             }).then(res => {
-                if (res.statu) {
+                if (res.status) {
                     swal({
                         text: '删除成功',
                         icon: 'success'

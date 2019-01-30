@@ -1,36 +1,53 @@
+const request = require('../extend/request')
+
 class BookInfo {
   constructor(){
-    this.list = [{name:'test', id: 'test', price: 'test', type: 'js', pages: 'test'},{name:'test', id: 'test', price: 'test', type: 'html', pages: 'test'}]
+    this.list = []
   }
 
-  getBookList () {
-    return this.list
+  async getBookList (params) {
+    const response = await request({
+      url: 'library/query',
+      type: 'post',
+      data: params
+    })
+    return response
   }
 
-  getOneBookById (id) {
-    return this.list[0]
+  async getOneBookById (id) {
+    const response = await request({
+      url: 'library/queryone',
+      type: 'get',
+      data: {id}
+    })
+    return response
   }
 
-  queryBooks (params) {
-    return this.list[1]
+  async deleteBookById (id) {
+    const response = await request({
+      url: 'library/delete',
+      type: 'get',
+      data: {id}
+    })
+    return response
   }
 
-  deleteBookById (id) {
-    return {
-      statu: true
-    }
+  async addOneBook (params) {
+    const response = await request({
+      url: 'library/add',
+      type: 'post',
+      data: params
+    })
+    return response
   }
 
-  addOneBook (params) {
-    return {
-      statu: 'true'
-    }
-  }
-
-  editOneBook (params) {
-    return {
-      statu: 'true'
-    }
+  async editOneBook (params) {
+    const response = await request({
+      url: 'library/edit',
+      type: 'post',
+      data: params
+    })
+    return response
   }
 }
 

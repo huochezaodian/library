@@ -1,9 +1,9 @@
-const BookInfo = require('./../models/books')
+const BookInfo = require('../models/books')
 const bookInfo = new BookInfo()
 const proxyController =  {
   delete: async (ctx, next) => {
     const params = ctx.query
-    const result = await bookInfo.deleteBookById(params)
+    const result = await bookInfo.deleteBookById(params.id)
     ctx.body = result
   },
   add: async (ctx, next) => {
