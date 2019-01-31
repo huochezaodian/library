@@ -10,27 +10,43 @@ $(function(){
             $('input').val('')
             $('select').val('')
         } else if (name === 'delete'){ // 删除
-            ajaxData({
-                url: '/library/delete',
-                type: 'get',
-                data: {
-                    id: target.dataset.id
+            const id = target.dataset.id
+            swal({
+                title: '确认删除这本书的信息吗？',
+                icon: 'warning',
+                buttons: {
+                    cancel: true,
+                    confirm: true,
                 }
-            }).then(res => {
-                if (res.status) {
-                    swal({
-                        text: '删除成功',
-                        icon: 'success'
-                    }).then(() => {
-                        window.location.reload()
-                    })
-                } else {
-                    swal({
-                        text: res.msg || '删除失败',
-                        icon: 'error'
-                    })
+            }).then(value => {
+                if (value) {
+                    deleteOneBookById(id)
                 }
             })
         }
     })
+
+    function deleteOneBookById (id) {
+        ajaxData({
+            url: '/library/delete',
+            type: 'get',
+            data: {
+                id
+            }
+        }).then(res => {
+            if (res.status) {
+                swal({
+                    title: '删除成功',
+                    icon: 'success'
+                }).then(() => {
+                    window.location.reload()
+                })
+            } else {
+                swal({
+                    title: res.msg || '删除失败',
+                    icon: 'error'
+                })
+            }
+        })
+    }
 })

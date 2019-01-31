@@ -15,14 +15,14 @@ $(function(){
         }).then(res => {
             if (res.status) {
                 swal({
-                    text: isAdd ? '添加成功' : '编辑成功',
+                    title: isAdd ? '添加成功' : '编辑成功',
                     icon: 'success'
                 }).then(() => {
                     window.location.href = '/list'
                 })
             } else {
                 swal({
-                    text: res.msg ||  isAdd ? '添加失败' : '编辑失败',
+                    title: res.msg ||  isAdd ? '添加失败' : '编辑失败',
                     icon: 'error'
                 })
             }

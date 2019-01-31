@@ -12,7 +12,6 @@ const mainController =  {
   },
   operate: async (ctx, next) => {
     const params = ctx.query
-    console.log('pa', params)
     let book = []
     if (params.id) {
       const result = await bookInfo.getOneBookById(params.id)
