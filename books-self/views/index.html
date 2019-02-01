@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}图书管理系统{%endblock%}
+
+{% block head %}
+<link rel="stylesheet" href="/styles/index.css">
+{% endblock %}
+
+{% block content %}
+{% include "../components/book/list.html" %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/javascript/index.js"></script>
+{% endblock %}
