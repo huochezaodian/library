@@ -11,7 +11,7 @@ function request ({url = '', data = {}, type = 'get', ...config}) {
             host: 'localhost',
             port: '80',
             method,
-            path: '/github/php-learning/YII-project/basic/web/index.php?r=' + url,
+            path: '/php-learning/YII-project/basic/web/index.php?r=' + url,
             headers:{  
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Content-Length': Buffer.byteLength(params)
