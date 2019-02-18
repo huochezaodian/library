@@ -1,0 +1,23 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "source": {
+        "include": ["./models"],
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "encoding": "utf8",                
+        "destination": "./docs/jsdocs",          
+        "recurse": true,
+        "verbose": true,
+        "template": "node_modules/docdash"           
+    }
+}
