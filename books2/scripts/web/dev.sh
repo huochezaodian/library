@@ -1,0 +1,2 @@
+# development
+ webpack --mode development

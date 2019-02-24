@@ -1,10 +1,17 @@
-const Koa = require('koa')
-const static = require('koa-static')
-const render = require('koa-swig')
-const bodyparser = require('koa-bodyparser')
-const co = require('co')
-const log4js = require('koa-log4')
-const config = require('./config')
+// const Koa = require('koa')
+// const staticFile = require('koa-static')
+// const render = require('koa-swig')
+// const bodyparser = require('koa-bodyparser')
+// const co = require('co')
+// const log4js = require('koa-log4')
+// const config = require('./config')
+import Koa from 'koa'
+import staticFile from 'koa-static'
+import render from 'koa-swig'
+import bodyparser from 'koa-bodyparser'
+import co from 'co'
+import log4js from 'koa-log4'
+import config from './config'
 const app = new Koa()
 
 // 中间件引入
@@ -15,7 +22,7 @@ app.use(bodyparser({
 }))
 
 //  静态文件
-app.use(static(config.staticDir))
+app.use(staticFile(config.staticDir))
 
 // swig 模板配置
 app.context.render = co.wrap(render({
