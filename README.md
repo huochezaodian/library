@@ -25,4 +25,4 @@
 1. 项目分离成src/server 和src/web 两端
 2. 环境区分, 开发环境和生产环境, 以及代码检测
 3. gulp编译服务端,rollup 做流的清洗
-4. webpack编译web,web端模块化
+4. webpack编译web,web端组件化、模块化,自定义HtmlAfterWebpackPlugin插件，用于静态资源的嵌入
