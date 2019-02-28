@@ -1,3 +1,32 @@
+
+<div class="form-query">
+    <form class="form-inline clearfix" action="/list">
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" name="name" class="form-control" value="{{form.name}}">
+        </div>
+        <div class="form-group">
+                <label for="type">类型</label>
+                <select class="form-control" name="type">
+                    <option value="" >请选择类型</option>
+                    {% set types = ['js', 'html', 'css', 'other'] %}
+                    {% for type in types %}
+                        {% if type === form.type %}
+                        <option value="{{type}}" selected>{{type}}</option>
+                        {% else %}
+                        <option value="{{type}}" >{{type}}</option>
+                        {% endif %}
+                    {% endfor %}
+                    </select>
+            </div>
+        
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary">查询</button>
+            <button type="button" name="reset" class="btn btn-primary">重置</button>
+            <a name="add" class="btn btn-primary" href="/operate">添加</a>
+        </div>
+    </form>
+</div>
 <div class="table-responsive">
   <table class="table table-hover table-bordered table-striped">
       <thead>

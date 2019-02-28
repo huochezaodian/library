@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./../../assets/favicon.ico" type="image/x-icon">
   <title>{% block title %}My Site{% endblock %}</title>
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   {% block head %}
-  <link rel="stylesheet" href="/stylesheets/index.css">
+  <link rel="stylesheet" href="/styles/common.css">
   {% endblock %}
 </head>
 
@@ -18,7 +18,7 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">
-            <img class="book-icon" alt="Brand" src="/images/books.png">Library
+            <img class="book-icon" alt="Brand" src="./../../assets/images/books.png">Library
           </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -58,9 +58,6 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- systemjs -->
   <script type="nomodule" src="https://cdn.staticfile.org/systemjs/3.0.0/system.js"></script>
-  <!-- 公共方法 -->
-  <script type="module" src="/javascripts/common.js"></script>
-  <script type="nomodule" src="/bundle/common.js"></script>
   {% block bottom %}
   {% endblock %}
 </body>

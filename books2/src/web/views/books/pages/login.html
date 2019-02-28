@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+{% parent %}
+<!--injectcss-->
+{% endblock %}
+
+{% block content %}
+{% include "components:login/login.html" %} 
+{% endblock %}
+
+{% block bottom %}
+<!--injectjs-->
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{% extends 'pages:common/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+{% parent %}
+    <!--injectcss-->
+{% endblock %}
+
+{% block content %}
+    {% include "components:list/list.html" %} 
+{% endblock %}
+{% block bottom %}
+<!-- <script type="module">
+    import('/javascripts/common.js').then(common => {
+        import('/javascripts/index.js').then(_ => {
+            _.default(common.throttle, common.ajaxData)
+        })
+    })
+</script>
+<script type="nomodule">
+    System.import('/bundle/common.js').then(common => {
+        System.import('/javascripts/index.js').then(_ => {
+            _.default(common.throttle, common.ajaxData)
+        })
+    })
+</script> -->
+    <!--injectjs-->
+{% endblock %}
+

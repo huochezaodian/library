@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+{% parent %}
+<!-- 引入额外的静态 -->
+{% endblock %}
+
+{% block content %}
+{% include "components:operate/operate.html" %} 
+{% endblock %}
+{% block bottom %}
+<!-- <script type="module">
+        import('/javascripts/common.js').then(common => {
+            import('/javascripts/operate.js').then(_ => {
+                _.default(common.throttle, common.ajaxData)
+            })
+        })
+    </script>
+    <script type="nomodule">
+        System.import('/bundle/common.js').then(common => {
+            System.import('/javascripts/operate.js').then(_ => {
+                _.default(common.throttle, common.ajaxData)
+            })
+        })
+    </script> -->
+    <!--injectjs-->
+{% endblock %}
